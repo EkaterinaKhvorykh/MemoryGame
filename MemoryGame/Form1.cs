@@ -31,17 +31,20 @@ namespace MemoryGame
         }
         void K(PictureBox previous, PictureBox next)
         {
-            if (previous == next)
+            if (previous.Tag == next.Tag)
             {
                 previous.Visible = false;
                 next.Visible = false;
                 pairs--;
+                left.Text = "Pairs = " + pairs;
+                //pictures.Dispose();
             }
             else
             {
-                previous.Image = Image.FromFile("0.png");
-                next.Image = Image.FromFile("0.png");
-                left.Text = "Pairs = " + pairs;
+               previous.Image = Image.FromFile("que2.png");
+               next.Image = Image.FromFile("que2.png");
+                
+                
             }
 
         }
@@ -50,7 +53,7 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
-
+           
         }
 
         void First()
@@ -63,13 +66,13 @@ namespace MemoryGame
                 }
             }
         }
-        void HandOut()
+        void HandOut ()
         {
             int[] numbers = new int[16];
             Random r = new Random();
 
             int i = 0;
-            while (i < 16)
+            while (i<16)
             {
                 int rand = r.Next(1, 17);
                 if (Array.IndexOf(numbers, rand) == -1)
@@ -94,7 +97,7 @@ namespace MemoryGame
                 }
             }
         }
-
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             PictureBox wopper = (sender as PictureBox);
@@ -109,11 +112,14 @@ namespace MemoryGame
             {
                 if (pictures == wopper)
                 {
-                    MessageBox.Show("The same picture");
+                  //  MessageBox.Show("The same picture");
+                    counter = 0;
+                    pictures.Image = Image.FromFile("que2.png");
                 }
                 else
                 {
-                    K(pictures, wopper);
+                    K (pictures, wopper);
+                    counter = 0;
                 }
             }
 
