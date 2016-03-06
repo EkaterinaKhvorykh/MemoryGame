@@ -31,10 +31,11 @@ namespace MemoryGame
         }
         void K(PictureBox previous, PictureBox next)
         {
-            if (previous.Tag == next.Tag)
+            if (previous.Tag.ToString() == next.Tag.ToString())
             {
                 previous.Visible = false;
                 next.Visible = false;
+                System.Threading.Thread.Sleep(500);
                 pairs--;
                 left.Text = "Pairs = " + pairs;
                 //pictures.Dispose();
