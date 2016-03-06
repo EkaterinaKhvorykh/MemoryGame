@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MemoryGame
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        byte counter = 0;
+        PictureBox pictures;
+        int pairs = 8;
+        void StartImage()
+        {
+            foreach (Control x in Controls)
+            {
+                if (x is PictureBox)
+                {
+                    (x as PictureBox).Image = Properties.Resources.que;
+                }
+            }
+        }
+        void K(PictureBox previous, PictureBox next)
+        {
+            if (previous == next)
+            {
+                previous.Visible = false;
+                next.Visible = false;
+                pairs--;
+            }
+            else
+            {
+                previous.Image = Image.FromFile("0.png");
+                next.Image = Image.FromFile("0.png");
+                left.Text = "Pairs = " + pairs;
+            }
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StartImage();
+            First();
+            HandOut();
+
+        }
+
+        void First()
+        {
+            foreach (Control x in Controls)
+            {
+                if (x is PictureBox)
+                {
+                    (x as PictureBox).Tag = "0";
+                }
+            }
+        }
+        void HandOut()
+        {
+            int[] numbers = new int[16];
+            Random r = new Random();
+
+            int i = 0;
+            while (i < 16)
+            {
+                int rand = r.Next(1, 17);
+                if (Array.IndexOf(numbers, rand) == -1)
+                {
+                    numbers[i] = rand;
+                    i++;
+                }
+            }
+
+            for (int j = 0; j < 16; j++)
+            {
+                if (numbers[j] > 8)
+                    numbers[j] -= 8;
+            }
+            int k = 0;
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox)
+                {
+                    x.Tag = numbers[k].ToString();
+                    k++;
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            PictureBox wopper = (sender as PictureBox);
+            (sender as PictureBox).Image = Image.FromFile((sender as PictureBox).Tag.ToString() + ".png");
+            if (counter == 0)
+            {
+                pictures = wopper;
+                counter++;
+            }
+
+            else
+            {
+                if (pictures == wopper)
+                {
+                    MessageBox.Show("The same picture");
+                }
+                else
+                {
+                    K(pictures, wopper);
+                }
+            }
+
+        }
+    }
+}
