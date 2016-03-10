@@ -33,15 +33,21 @@ namespace MemoryGame
         {
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(500);
                 previous.Visible = false;
                 next.Visible = false;
-                System.Threading.Thread.Sleep(500);
+               
                 pairs--;
-                left.Text = "Pairs = " + pairs;
+                if (pairs == 0) left.Text = "Good game";
+                else
+                left.Text = "Left to find " + pairs;
                 //pictures.Dispose();
             }
             else
             {
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(500);
                previous.Image = Image.FromFile("que2.png");
                next.Image = Image.FromFile("que2.png");
                 
