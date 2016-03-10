@@ -41,7 +41,7 @@ namespace MemoryGame
                 pairs--;
                 if (pairs == 0) left.Text = "Good game";
                 else
-                left.Text = "Left to find " + pairs;
+                    left.Text = "Left to find " + pairs + " pairs";
                 //pictures.Dispose();
             }
             else
@@ -130,6 +130,27 @@ namespace MemoryGame
                 }
             }
 
+        }
+        void Retry()
+        {
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox)
+                {
+                    (x as PictureBox).Visible = true;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Retry();
+            StartImage();
+            First();
+            HandOut();
+            pairs = 8;
+            counter = 0;
+           
         }
     }
 }

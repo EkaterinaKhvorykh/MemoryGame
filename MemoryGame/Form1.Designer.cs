@@ -45,6 +45,7 @@
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.left = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -242,17 +243,40 @@
             // left
             // 
             this.left.AutoSize = true;
-            this.left.Location = new System.Drawing.Point(477, 193);
+            this.left.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.left.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.left.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.left.ForeColor = System.Drawing.SystemColors.Control;
+            this.left.Location = new System.Drawing.Point(445, 39);
             this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(47, 13);
+            this.left.Size = new System.Drawing.Size(114, 22);
             this.left.TabIndex = 1;
-            this.left.Text = "pairs = 8";
+            this.left.Text = "8 pairs of birds";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(445, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 49);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Retry";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MemoryGame.Properties.Resources.фон;
             this.ClientSize = new System.Drawing.Size(591, 427);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.left);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox8);
@@ -313,6 +337,7 @@
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label left;
+        private System.Windows.Forms.Button button1;
     }
 }
 
