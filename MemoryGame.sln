@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryGame", "MemoryGame\MemoryGame.csproj", "{13DF20A8-EE5B-407F-936B-3735B50CDF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartPage", "StartPage\StartPage.csproj", "{C299FAE6-1D17-40CE-B61A-1592BFF5B9FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{13DF20A8-EE5B-407F-936B-3735B50CDF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13DF20A8-EE5B-407F-936B-3735B50CDF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13DF20A8-EE5B-407F-936B-3735B50CDF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C299FAE6-1D17-40CE-B61A-1592BFF5B9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C299FAE6-1D17-40CE-B61A-1592BFF5B9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C299FAE6-1D17-40CE-B61A-1592BFF5B9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C299FAE6-1D17-40CE-B61A-1592BFF5B9FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

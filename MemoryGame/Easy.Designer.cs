@@ -1,6 +1,6 @@
 ﻿namespace MemoryGame
 {
-    partial class Form1
+    partial class Easy
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MemoryGame.Properties.Resources.фон;
+            this.BackgroundImage = global::MemoryGame.Properties.Resources.bg;
             this.ClientSize = new System.Drawing.Size(591, 427);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.left);

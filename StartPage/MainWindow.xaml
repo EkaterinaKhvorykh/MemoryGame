@@ -4,8 +4,11 @@
         Title="MainWindow" Height="466" Width="607">
     <Grid>
         <Image HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="589" Source="logo2.png" Margin="10,0,0,0"/>
-        <Button Content="EASY" HorizontalAlignment="Left" Height="46" Margin="177,198,0,0" VerticalAlignment="Top" Width="231"/>
-        <Button Content="NOT SO EASY" HorizontalAlignment="Left" Height="46" Margin="177,275,0,0" VerticalAlignment="Top" Width="231"/>
+        <Button Content="EASY" HorizontalAlignment="Left" Height="46" Margin="177,198,0,0" VerticalAlignment="Top" Width="231" Click="Button_Click"/>
+        <Button Content="HARD" HorizontalAlignment="Left" Height="46" Margin="177,275,0,0" VerticalAlignment="Top" Width="231" Click="Button_Click_1" />
+        <ComboBox Name="comboBox1" Margin="177,115,184,259">
+            
+        </ComboBox>
 
     </Grid>
 </Window>

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace MemoryGame
 {
-    public partial class Form1 : Form
+    public partial class Easy : Form
     {
-        public Form1()
+        public Easy()
         {
             InitializeComponent();
         }
@@ -26,6 +28,7 @@ namespace MemoryGame
                 if (x is PictureBox)
                 {
                     (x as PictureBox).Image = Properties.Resources.que;
+
                 }
             }
         }
@@ -48,8 +51,8 @@ namespace MemoryGame
             {
                 Application.DoEvents();
                 System.Threading.Thread.Sleep(500);
-               previous.Image = Image.FromFile("que2.png");
-               next.Image = Image.FromFile("que2.png");
+               previous.Image = Image.FromFile( @"..\\..\\..\\MemoryGame\Resources\que2.png");
+               next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 
                 
             }
@@ -108,7 +111,8 @@ namespace MemoryGame
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             PictureBox wopper = (sender as PictureBox);
-            (sender as PictureBox).Image = Image.FromFile((sender as PictureBox).Tag.ToString() + ".png");
+            string str = @"..\\..\\..\\MemoryGame\Resources\" + (sender as PictureBox).Tag.ToString() + ".png";
+            wopper.Image = Image.FromFile(str);
             if (counter == 0)
             {
                 pictures = wopper;
@@ -119,9 +123,9 @@ namespace MemoryGame
             {
                 if (pictures == wopper)
                 {
-                  //  MessageBox.Show("The same picture");
+                  
                     counter = 0;
-                    pictures.Image = Image.FromFile("que2.png");
+                    pictures.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 }
                 else
                 {
