@@ -105,7 +105,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 98);
+            this.button1.Location = new System.Drawing.Point(711, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 67);
             this.button1.TabIndex = 36;
@@ -476,7 +476,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 583);
+            this.BackgroundImage = global::MemoryGame.Properties.Resources.bg1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(897, 583);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox26);

@@ -21,11 +21,19 @@ namespace StartPage
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<string> list = new ObservableCollection<string>();
+        public int selectedIndex = -1;
         public MainWindow()
         {
             InitializeComponent();
-            this.comboBox1.Items.Add("Angry Birds");
-            this.comboBox1.Items.Add("Super Mario");
+            //this.comboBox1.Items.Add("Angry Birds");
+           // this.comboBox1.Items.Add("Super Mario");
+
+
+            list.Add("Angry Birds");
+            list.Add("Super Mario");
+            
+            this.cbx.ItemsSource = list;
 
         }
        
@@ -41,6 +49,21 @@ namespace StartPage
             var hard = new Hard();
             hard.Show();
         }
+
+        private void cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedIndex = this.cbx.SelectedIndex;
+            //list[0] = "aa";
+            //list[1] = "bb";
+           
+            //reset the selected index
+            //this.cbx.SelectedIndex = selectedIndex;
+
+           
+
+        }
+
+       
 
     
 

@@ -18,9 +18,10 @@ namespace MemoryGame
         {
             InitializeComponent();
         }
-        byte counter = 0;
+         int counter = 0;
         PictureBox pictures;
-        int pairs = 8;
+         int pairs = 8;
+         int time = 0;
         void StartImage()
         {
             foreach (Control x in Controls)
@@ -37,20 +38,20 @@ namespace MemoryGame
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(500);
-                previous.Visible = false;
-                next.Visible = false;
+                System.Threading.Thread.Sleep(400);
+                previous.Visible = true;
+                next.Visible = true;
                
                 pairs--;
                 if (pairs == 0) left.Text = "Good game";
                 else
                     left.Text = "Left to find " + pairs + " pairs";
-                //pictures.Dispose();
+                
             }
             else
             {
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(500);
+               System.Threading.Thread.Sleep(400);
                previous.Image = Image.FromFile( @"..\\..\\..\\MemoryGame\Resources\que2.png");
                next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 
@@ -65,6 +66,8 @@ namespace MemoryGame
             HandOut();
            
         }
+
+       
 
         void First()
         {
@@ -154,7 +157,24 @@ namespace MemoryGame
             HandOut();
             pairs = 8;
             counter = 0;
+            time = 0;
+            timer1.Start();
+            //timer1.Tick += new EventHandler(timer1_Tick_1);
            
         }
+        
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            time += 1;
+            label1.Text = "Your time is " + time + " s";
+            if (pairs == 0)
+            {
+                timer1.Stop();
+            }
+
+        }
+
+       
+       
     }
 }

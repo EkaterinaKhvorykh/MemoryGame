@@ -43,9 +43,9 @@ namespace MemoryGame
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(500);
-                previous.Visible = false;
-                next.Visible = false;
+                System.Threading.Thread.Sleep(400);
+                previous.Visible = true;
+                next.Visible = true;
 
                 pairs2--;
                 //if (pairs2 == 0) left.Text = "Good game";
@@ -56,7 +56,7 @@ namespace MemoryGame
             else
             {
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(400);
                 previous.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
 
