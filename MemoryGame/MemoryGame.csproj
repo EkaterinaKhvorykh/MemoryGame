@@ -47,12 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -126,7 +120,11 @@
     <Content Include="Resources\6.png" />
     <Content Include="Resources\7.png" />
     <Content Include="Resources\8.png" />
+    <Content Include="Resources\bg.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\butt.png" />
     <Content Include="Resources\logo2.png" />
+    <None Include="Resources\obl.jpg" />
     <Content Include="Resources\SuperMario\1.png" />
     <Content Include="Resources\SuperMario\2.png" />
     <Content Include="Resources\SuperMario\3.png" />
@@ -145,7 +143,6 @@
     <Content Include="Resources\SuperMario\17.png" />
     <Content Include="Resources\SuperMario\18.png" />
     <Content Include="Resources\SuperMario\5.png" />
-    <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

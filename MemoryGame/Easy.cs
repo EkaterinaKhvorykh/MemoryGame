@@ -19,7 +19,7 @@ namespace MemoryGame
             InitializeComponent();
         }
          int counter = 0;
-        PictureBox pictures;
+         PictureBox pictures;
          int pairs = 8;
          int time = 0;
         void StartImage()
@@ -43,18 +43,26 @@ namespace MemoryGame
                 next.Visible = true;
                
                 pairs--;
-                if (pairs == 0) left.Text = "Good game";
+                if (pairs == 0) left.Text = "Good game!";
                 else
                     left.Text = "Left to find " + pairs + " pairs";
                 
             }
             else
             {
-                Application.DoEvents();
+               Application.DoEvents();
                System.Threading.Thread.Sleep(400);
-               previous.Image = Image.FromFile( @"..\\..\\..\\MemoryGame\Resources\que2.png");
-               next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
-                
+               try
+               {
+                   previous.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
+                   next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
+               }
+               catch (FileNotFoundException)
+               {
+
+                   MessageBox.Show("Failed");
+
+               };
                 
             }
 
@@ -64,6 +72,8 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
+            
+            
            
         }
 
@@ -113,9 +123,22 @@ namespace MemoryGame
         
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            timer1.Start();
             PictureBox wopper = (sender as PictureBox);
-            string str = @"..\\..\\..\\MemoryGame\Resources\" + (sender as PictureBox).Tag.ToString() + ".png";
+            try
+            {
+                string str = @"..\\..\\..\\MemoryGame\Resources\" + (sender as PictureBox).Tag.ToString() + ".png";
+         
             wopper.Image = Image.FromFile(str);
+            }
+
+            catch (FileNotFoundException)
+            {
+
+                MessageBox.Show("Failed");
+
+            };
+
             if (counter == 0)
             {
                 pictures = wopper;
@@ -137,6 +160,7 @@ namespace MemoryGame
                 }
             }
 
+           
         }
         void Retry()
         {
@@ -149,7 +173,7 @@ namespace MemoryGame
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void Retry_Click(object sender, EventArgs e)
         {
             Retry();
             StartImage();
@@ -162,8 +186,10 @@ namespace MemoryGame
             //timer1.Tick += new EventHandler(timer1_Tick_1);
            
         }
+
         
-        private void timer1_Tick_1(object sender, EventArgs e)
+        
+        public void timer1_Tick_1(object sender, EventArgs e)
         {
             time += 1;
             label1.Text = "Your time is " + time + " s";
@@ -171,9 +197,24 @@ namespace MemoryGame
             {
                 timer1.Stop();
             }
-
+            
         }
 
+        //private double calculateScore(int time)
+        //{
+        //    //int score = 0;
+        //    int flips = 8;
+        //    double timeScore = 100f * (20f / time);
+
+        //    double flipScore = 500f * (20f / flips);
+        //    double score = timeScore + flipScore;
+        //    labelScore.Text = "Your score is " + score;
+        //    return score;
+        //}
+
+        
+
+       
        
        
     }
