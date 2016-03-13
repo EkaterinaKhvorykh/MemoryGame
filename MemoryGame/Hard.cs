@@ -13,7 +13,7 @@ namespace MemoryGame
 {
     public partial class Hard : Form
     {
-        int time = 0;
+       
         public Hard()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace MemoryGame
         int schetchik = 0;
         PictureBox pictures2;
         int pairs2 = 18;
+        int time2 = 60;
         void StartImage()
         {
             foreach (Control x in Controls)
@@ -50,7 +51,11 @@ namespace MemoryGame
                 next.Visible = true;
 
                 pairs2--;
-                if (pairs2 == 0) left.Text = "Good game";
+                if (pairs2 == 0)
+                {
+                    left.Text = "Good game";
+                    timerHard.Stop();
+                }
                 else
                     left.Text = "Left to find " + pairs2 + " pairs";
                 
@@ -119,7 +124,7 @@ namespace MemoryGame
 
         private void PB_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            
             PictureBox wopper2 = (sender as PictureBox);
             try
             {
@@ -173,20 +178,29 @@ namespace MemoryGame
             HandOut();
             pairs2 = 18;
             schetchik = 0;
-            time = 0;
-            timer1.Start();
+            time2 = 60;
+            //timerHard.Tick += new EventHandler(timerHard_Tick);
+            timerHard.Start();
+          
+           
+            
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerHard_Tick(object sender, EventArgs e)
         {
-            time += 1;
-            labelTime.Text = "Your time is " + time + " s";
-            if (pairs2 == 0)
+            
+            time2 -= 1;
+            labelTime.Text = time2 + " s left";
+            if (time2 == 0)
             {
-                timer1.Stop();
+                timerHard.Stop();
+                labelTime.Text = "0";
+                MessageBox.Show("Game finished");
             }
         }
+
+        
     }
 
 

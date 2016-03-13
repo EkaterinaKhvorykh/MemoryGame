@@ -68,7 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.left = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerHard = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -537,14 +537,15 @@
             this.labelTime.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTime.Location = new System.Drawing.Point(682, 170);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(56, 28);
+            this.labelTime.Size = new System.Drawing.Size(114, 28);
             this.labelTime.TabIndex = 38;
-            this.labelTime.Text = "Time";
+            this.labelTime.Text = "Time is 60 s";
             // 
-            // timer1
+            // timerHard
             // 
-            this.timer1.Interval = 750;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerHard.Enabled = true;
+            this.timerHard.Interval = 1000;
+            this.timerHard.Tick += new System.EventHandler(this.timerHard_Tick);
             // 
             // Hard
             // 
@@ -677,6 +678,6 @@
         private System.Windows.Forms.Button Restart;
         private System.Windows.Forms.Label left;
         private System.Windows.Forms.Label labelTime;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerHard;
     }
 }

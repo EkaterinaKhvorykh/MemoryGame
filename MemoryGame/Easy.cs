@@ -43,7 +43,11 @@ namespace MemoryGame
                 next.Visible = true;
                
                 pairs--;
-                if (pairs == 0) left.Text = "Good game!";
+                if (pairs == 0)
+                {
+                    left.Text = "Good game!";
+                    timer1.Stop();
+                }
                 else
                     left.Text = "Left to find " + pairs + " pairs";
                 
@@ -72,13 +76,8 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
-            
-            
-           
+   
         }
-
-       
-
         void First()
         {
             foreach (Control x in Controls)
