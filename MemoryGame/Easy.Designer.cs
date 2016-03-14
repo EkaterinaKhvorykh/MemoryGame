@@ -312,9 +312,13 @@
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(442, 242);
+            this.labelScore.BackColor = System.Drawing.Color.Transparent;
+            this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelScore.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelScore.Image = global::MemoryGame.Properties.Resources.butt;
+            this.labelScore.Location = new System.Drawing.Point(445, 242);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(35, 13);
+            this.labelScore.Size = new System.Drawing.Size(61, 28);
             this.labelScore.TabIndex = 4;
             this.labelScore.Text = "Score";
             // 

@@ -14,10 +14,13 @@ namespace MemoryGame
 {
     public partial class Easy : Form
     {
-        public Easy()
+        private string pic_route;
+        public Easy(string new_route)
         {
+            pic_route = new_route; 
             InitializeComponent();
         }
+
          int counter = 0;
          PictureBox pictures;
          int pairs = 8;
@@ -28,7 +31,7 @@ namespace MemoryGame
             {
                 if (x is PictureBox)
                 {
-                    (x as PictureBox).Image = Properties.Resources.que;
+                    (x as PictureBox).Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
 
                 }
             }
@@ -65,7 +68,6 @@ namespace MemoryGame
                {
 
                    MessageBox.Show("Failed");
-
                };
                 
             }
@@ -76,6 +78,7 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
+            
    
         }
         void First()
@@ -124,9 +127,10 @@ namespace MemoryGame
         {
             timer1.Start();
             PictureBox wopper = (sender as PictureBox);
+            
             try
             {
-                string str = @"..\\..\\..\\MemoryGame\Resources\" + (sender as PictureBox).Tag.ToString() + ".png";
+                string str = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
          
             wopper.Image = Image.FromFile(str);
             }
@@ -195,26 +199,17 @@ namespace MemoryGame
             if (pairs == 0)
             {
                 timer1.Stop();
+
             }
-            
+            calculateScore();
         }
 
-        //private double calculateScore(int time)
-        //{
-        //    //int score = 0;
-        //    int flips = 8;
-        //    double timeScore = 100f * (20f / time);
-
-        //    double flipScore = 500f * (20f / flips);
-        //    double score = timeScore + flipScore;
-        //    labelScore.Text = "Your score is " + score;
-        //    return score;
-        //}
-
-        
-
-       
-       
-       
+        private int calculateScore()
+        {
+            //int score = 0;    
+            int timeScore = 10000 / time;
+            labelScore.Text = "Your score is " + timeScore;
+            return timeScore;
+        }
     }
 }

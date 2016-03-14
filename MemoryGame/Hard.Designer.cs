@@ -69,6 +69,7 @@
             this.left = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerHard = new System.Windows.Forms.Timer(this.components);
+            this.lblScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -547,6 +548,18 @@
             this.timerHard.Interval = 1000;
             this.timerHard.Tick += new System.EventHandler(this.timerHard_Tick);
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblScore.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(682, 214);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(61, 28);
+            this.lblScore.TabIndex = 39;
+            this.lblScore.Text = "Score";
+            // 
             // Hard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +567,7 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.obl;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 588);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.left);
             this.Controls.Add(this.Restart);
@@ -679,5 +693,6 @@
         private System.Windows.Forms.Label left;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timerHard;
+        private System.Windows.Forms.Label lblScore;
     }
 }

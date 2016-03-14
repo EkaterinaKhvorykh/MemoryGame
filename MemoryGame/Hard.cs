@@ -13,9 +13,11 @@ namespace MemoryGame
 {
     public partial class Hard : Form
     {
+        private string pic_route;
        
-        public Hard()
+        public Hard(string new_route)
         {
+            pic_route = new_route; 
             InitializeComponent();
         }
 
@@ -29,14 +31,14 @@ namespace MemoryGame
         int schetchik = 0;
         PictureBox pictures2;
         int pairs2 = 18;
-        int time2 = 60;
+        int time2 = 120;
         void StartImage()
         {
             foreach (Control x in Controls)
             {
                 if (x is PictureBox)
                 {
-                    (x as PictureBox).Image = Properties.Resources.que;
+                    (x as PictureBox).Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
 
                 }
             }
@@ -49,7 +51,7 @@ namespace MemoryGame
                 System.Threading.Thread.Sleep(400);
                 previous.Visible = true;
                 next.Visible = true;
-
+                
                 pairs2--;
                 if (pairs2 == 0)
                 {
@@ -128,7 +130,7 @@ namespace MemoryGame
             PictureBox wopper2 = (sender as PictureBox);
             try
             {
-                string strin = @"..\\..\\..\\MemoryGame\Resources\SuperMario\" + (sender as PictureBox).Tag.ToString() + ".png";
+                string strin = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
                 wopper2.Image = Image.FromFile(strin);
             }
             catch (FileNotFoundException)
@@ -168,8 +170,6 @@ namespace MemoryGame
             }
         }
 
-        
-
         private void Restart_Click(object sender, EventArgs e)
         {
             Retry();
@@ -181,15 +181,12 @@ namespace MemoryGame
             time2 = 60;
             //timerHard.Tick += new EventHandler(timerHard_Tick);
             timerHard.Start();
-          
-           
-            
+            calculateScore();
 
         }
 
         private void timerHard_Tick(object sender, EventArgs e)
         {
-            
             time2 -= 1;
             labelTime.Text = time2 + " s left";
             if (time2 == 0)
@@ -198,9 +195,16 @@ namespace MemoryGame
                 labelTime.Text = "0";
                 MessageBox.Show("Game finished");
             }
-        }
+            calculateScore();
 
-        
+        }
+        private int calculateScore()
+        {
+            //int score = 0;    
+            int timeScore = 10 * time2 + 100;
+            lblScore.Text = "Your score is " + timeScore;
+            return timeScore;
+        }
     }
 
 

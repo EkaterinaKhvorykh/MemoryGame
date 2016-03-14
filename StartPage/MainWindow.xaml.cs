@@ -19,49 +19,48 @@ namespace StartPage
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /// 
+    
     public partial class MainWindow : Window
     {
-        public ObservableCollection<string> list = new ObservableCollection<string>();
-        public int selectedIndex = -1;
+        //public ObservableCollection<string> list = new ObservableCollection<string>();
+       // public int selectedIndex = -1;
+        public string new_route; 
         public MainWindow()
         {
             InitializeComponent();
-            //this.comboBox1.Items.Add("Angry Birds");
-           // this.comboBox1.Items.Add("Super Mario");
-
-
-            list.Add("Angry Birds");
-            list.Add("Super Mario");
-            
-            this.cbx.ItemsSource = list;
-
         }
        
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            var form = new Easy();
+            var form = new Easy(new_route);
             form.Show();
             
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var hard = new Hard();
+            var hard = new Hard(new_route);
+            //var hard1 = new Hard("SuperMario");
             hard.Show();
+           // hard1.Show();
         }
 
-        private void cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void SM_Selected(object sender, RoutedEventArgs e)
         {
-            selectedIndex = this.cbx.SelectedIndex;
-            //list[0] = "aa";
-            //list[1] = "bb";
-           
-            //reset the selected index
-            //this.cbx.SelectedIndex = selectedIndex;
-
-           
-
+            this.new_route = "SuperMario";
         }
+
+        private void AB_Selected(object sender, RoutedEventArgs e)
+        {
+            this.new_route = "AngryBirds"; 
+        }
+
+     
+
+        
 
        
 
