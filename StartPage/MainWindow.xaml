@@ -6,11 +6,12 @@
     <Grid>
         <Image HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="589" Source="logo2.png" Margin="10,0,0,0"/>
 
-        <Button Content="EASY" HorizontalAlignment="Left" Height="46" Margin="177,202,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" Click="Button_Click"/>
-        <Button Content="HARD" HorizontalAlignment="Left" Height="46" Margin="177,275,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" Click="Button_Click_1" />
-        <ListBox HorizontalAlignment="Left" Height="50" Margin="177,129,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" BorderBrush="Black">
+        <Button Content="EASY" HorizontalAlignment="Left" Height="46" Margin="177,221,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" Click="Button_Click"/>
+        <Button Content="HARD" HorizontalAlignment="Left" Height="46" Margin="177,289,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" Click="Button_Click_1" />
+        <ListBox HorizontalAlignment="Left" Height="71" Margin="177,129,0,0" VerticalAlignment="Top" Width="231" Background="AliceBlue" BorderBrush="Black">
             <ListBoxItem Content="ANGRY BIRDS" Selected="AB_Selected" HorizontalAlignment="Center"/>
             <ListBoxItem Content="SUPER MARIO" Selected="SM_Selected" HorizontalAlignment="Center"/>
+            <ListBoxItem Content="SMESHARIKI" HorizontalAlignment="Center" Selected="ListBoxItem_Selected"/>
 
         </ListBox>
 

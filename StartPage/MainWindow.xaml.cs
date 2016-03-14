@@ -24,7 +24,7 @@ namespace StartPage
     public partial class MainWindow : Window
     {
         //public ObservableCollection<string> list = new ObservableCollection<string>();
-       // public int selectedIndex = -1;
+        // public int selectedIndex = -1;
         public string new_route; 
         public MainWindow()
         {
@@ -58,7 +58,7 @@ namespace StartPage
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            this.new_route = "Smeshariki"; 
+            this.new_route = "Smeshar"; 
         }
 
      
