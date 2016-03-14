@@ -130,8 +130,8 @@ namespace MemoryGame
             PictureBox wopper2 = (sender as PictureBox);
             try
             {
-                string strin = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
-                wopper2.Image = Image.FromFile(strin);
+                string str = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
+                wopper2.Image = Image.FromFile(str);
             }
             catch (FileNotFoundException)
             {

@@ -41,9 +41,7 @@ namespace StartPage
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var hard = new Hard(new_route);
-            //var hard1 = new Hard("SuperMario");
-            hard.Show();
-           // hard1.Show();
+            hard.Show();    
         }
 
        
@@ -56,6 +54,11 @@ namespace StartPage
         private void AB_Selected(object sender, RoutedEventArgs e)
         {
             this.new_route = "AngryBirds"; 
+        }
+
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            this.new_route = "Smeshariki"; 
         }
 
      
