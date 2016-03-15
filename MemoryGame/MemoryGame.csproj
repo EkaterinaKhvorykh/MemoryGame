@@ -76,6 +76,13 @@
     <Compile Include="Hard.Designer.cs">
       <DependentUpon>Hard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyControlEventArgs.cs" />
+    <Compile Include="MyControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls.Designer.cs">
+      <DependentUpon>MyControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Easy.resx">
@@ -83,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hard.resx">
       <DependentUpon>Hard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls.resx">
+      <DependentUpon>MyControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
