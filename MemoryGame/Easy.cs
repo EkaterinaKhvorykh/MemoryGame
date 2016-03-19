@@ -15,6 +15,7 @@ namespace MemoryGame
     public partial class Easy : Form
     {
         private string pic_route;
+            
         public Easy(string new_route)
         {
             
@@ -37,7 +38,7 @@ namespace MemoryGame
                 }
             }
         }
-        void K(PictureBox previous, PictureBox next)
+        void KeyAlgoritm (PictureBox previous, PictureBox next)
         {
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
@@ -45,16 +46,18 @@ namespace MemoryGame
                 System.Threading.Thread.Sleep(400);
                 previous.Visible = true;
                 next.Visible = true;
+                //button1.Click -= new System.EventHandler(this.pictureBox1_Click);
+                
                
                 pairs--;
                 if (pairs == 0)
                 {
-                    left.Text = "Good game!";
+                   
                     timer1.Stop();
+                    btn_score.Enabled = true;
+    
                 }
-                else
-                    left.Text = "Left to find " + pairs + " pairs";
-                
+               
             }
             else
             {
@@ -80,8 +83,8 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
-            
-   
+           
+
         }
         void First()
         {
@@ -123,6 +126,7 @@ namespace MemoryGame
                     k++;
                 }
             }
+            
         }
         
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -134,7 +138,7 @@ namespace MemoryGame
             {
                 string str = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
          
-            wopper.Image = Image.FromFile(str);
+                wopper.Image = Image.FromFile(str);
             }
 
             catch (FileNotFoundException)
@@ -160,15 +164,15 @@ namespace MemoryGame
                 }
                 else
                 {
-                    K (pictures, wopper);
+                    KeyAlgoritm (pictures, wopper);
                     counter = 0;
                 }
-            }
-
-           
+            }         
         }
-        void Retry()
+        public void Retry()
         {
+           //wopper.Enabled = true;
+           
             foreach (Control x in this.Controls)
             {
                 if (x is PictureBox)
@@ -180,6 +184,7 @@ namespace MemoryGame
 
         public void Retry_Click(object sender, EventArgs e)
         {
+            
             Retry();
             StartImage();
             First();
@@ -191,9 +196,7 @@ namespace MemoryGame
             //timer1.Tick += new EventHandler(timer1_Tick_1);
            
         }
-
-        
-        
+  
         public void timer1_Tick_1(object sender, EventArgs e)
         {
             time += 1;
@@ -212,6 +215,12 @@ namespace MemoryGame
             int timeScore = 10000 / time;
             labelScore.Text = "Your score is " + timeScore;
             return timeScore;
+        }
+
+        private void btn_score_Click(object sender, EventArgs e)
+        {
+            var pn = new PlayerName();
+            pn.Show(); 
         }
     }
 }

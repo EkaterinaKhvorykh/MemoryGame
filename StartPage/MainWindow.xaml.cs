@@ -23,8 +23,6 @@ namespace StartPage
     
     public partial class MainWindow : Window
     {
-        //public ObservableCollection<string> list = new ObservableCollection<string>();
-        // public int selectedIndex = -1;
         public string new_route; 
         public MainWindow()
         {
@@ -35,13 +33,13 @@ namespace StartPage
         {
             var form = new Easy(new_route);
             form.Show();
-            
+ 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var hard = new Hard(new_route);
-            hard.Show();    
+            hard.Show();
         }
 
        

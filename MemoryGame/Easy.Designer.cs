@@ -45,11 +45,11 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.left = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelScore = new System.Windows.Forms.Label();
+            this.btn_score = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -260,20 +260,6 @@
             this.pictureBox16.Tag = "0";
             this.pictureBox16.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // left
-            // 
-            this.left.AutoSize = true;
-            this.left.BackColor = System.Drawing.Color.Transparent;
-            this.left.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.left.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.left.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.left.Image = global::MemoryGame.Properties.Resources.butt;
-            this.left.Location = new System.Drawing.Point(445, 193);
-            this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(140, 28);
-            this.left.TabIndex = 1;
-            this.left.Text = "8 pairs of birds";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -281,11 +267,11 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Calibri Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(445, 80);
+            this.button1.Location = new System.Drawing.Point(436, 140);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 47);
+            this.button1.Size = new System.Drawing.Size(108, 42);
             this.button1.TabIndex = 2;
             this.button1.Text = "Retry";
             this.button1.UseVisualStyleBackColor = false;
@@ -298,7 +284,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Image = global::MemoryGame.Properties.Resources.butt;
-            this.label1.Location = new System.Drawing.Point(445, 147);
+            this.label1.Location = new System.Drawing.Point(450, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 28);
             this.label1.TabIndex = 3;
@@ -316,11 +302,25 @@
             this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelScore.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelScore.Image = global::MemoryGame.Properties.Resources.butt;
-            this.labelScore.Location = new System.Drawing.Point(445, 242);
+            this.labelScore.Location = new System.Drawing.Point(450, 90);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(61, 28);
             this.labelScore.TabIndex = 4;
             this.labelScore.Text = "Score";
+            // 
+            // btn_score
+            // 
+            this.btn_score.BackgroundImage = global::MemoryGame.Properties.Resources.butt;
+            this.btn_score.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_score.Enabled = false;
+            this.btn_score.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_score.Location = new System.Drawing.Point(436, 188);
+            this.btn_score.Name = "btn_score";
+            this.btn_score.Size = new System.Drawing.Size(108, 38);
+            this.btn_score.TabIndex = 5;
+            this.btn_score.Text = "Save score";
+            this.btn_score.UseVisualStyleBackColor = true;
+            this.btn_score.Click += new System.EventHandler(this.btn_score_Click);
             // 
             // Easy
             // 
@@ -329,10 +329,10 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.obl;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(648, 427);
+            this.Controls.Add(this.btn_score);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.left);
             this.Controls.Add(this.pictureBox16);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox15);
@@ -349,6 +349,7 @@
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Easy";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -396,11 +397,11 @@
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.Label left;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelScore;
+        private System.Windows.Forms.Button btn_score;
     }
 }
 

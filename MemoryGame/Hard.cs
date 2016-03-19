@@ -27,6 +27,7 @@ namespace MemoryGame
             StartImage();
             First();
             HandOut();
+            
         }
 
         int schetchik = 0;
@@ -44,7 +45,7 @@ namespace MemoryGame
                 }
             }
         }
-        void K(PictureBox previous, PictureBox next)
+        void KeyAlgoritm (PictureBox previous, PictureBox next)
         {
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
@@ -56,11 +57,10 @@ namespace MemoryGame
                 pairs2--;
                 if (pairs2 == 0)
                 {
-                    left.Text = "Good game";
+                    
                     timerHard.Stop();
+                    btnSc.Enabled = true; 
                 }
-                else
-                    left.Text = "Left to find " + pairs2 + " pairs";
                 
             }
             else
@@ -155,7 +155,7 @@ namespace MemoryGame
                 }
                 else
                 {
-                    K(pictures2, wopper2);
+                    KeyAlgoritm(pictures2, wopper2);
                     schetchik = 0;
                 }
             }
@@ -179,7 +179,7 @@ namespace MemoryGame
             HandOut();
             pairs2 = 18;
             schetchik = 0;
-            time2 = 60;
+            time2 = 120;
             //timerHard.Tick += new EventHandler(timerHard_Tick);
             timerHard.Start();
             calculateScore();
@@ -202,9 +202,15 @@ namespace MemoryGame
         private int calculateScore()
         {
             //int score = 0;    
-            int timeScore = 10 * time2 + 100;
+            int timeScore = 15 * time2;
             lblScore.Text = "Your score is " + timeScore;
             return timeScore;
+        }
+
+        private void btnSc_Click(object sender, EventArgs e)
+        {
+            var pn = new PlayerName();
+            pn.Show(); 
         }
     }
 

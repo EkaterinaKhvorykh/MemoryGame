@@ -66,10 +66,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.left = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerHard = new System.Windows.Forms.Timer(this.components);
             this.lblScore = new System.Windows.Forms.Label();
+            this.btnSc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -112,10 +112,10 @@
             // 
             this.Restart.BackgroundImage = global::MemoryGame.Properties.Resources.butt;
             this.Restart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Restart.Font = new System.Drawing.Font("Calibri Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Restart.Location = new System.Drawing.Point(682, 68);
+            this.Restart.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Restart.Location = new System.Drawing.Point(682, 193);
             this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(114, 47);
+            this.Restart.Size = new System.Drawing.Size(125, 44);
             this.Restart.TabIndex = 36;
             this.Restart.Text = "Retry";
             this.Restart.UseVisualStyleBackColor = true;
@@ -517,30 +517,17 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PB_Click);
             // 
-            // left
-            // 
-            this.left.AutoSize = true;
-            this.left.BackColor = System.Drawing.Color.Transparent;
-            this.left.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.left.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.left.Location = new System.Drawing.Point(682, 128);
-            this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(82, 28);
-            this.left.TabIndex = 37;
-            this.left.Tag = "";
-            this.left.Text = "18 pairs";
-            // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
-            this.labelTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelTime.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(682, 170);
+            this.labelTime.Location = new System.Drawing.Point(682, 38);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(114, 28);
+            this.labelTime.Size = new System.Drawing.Size(125, 28);
             this.labelTime.TabIndex = 38;
-            this.labelTime.Text = "Time is 60 s";
+            this.labelTime.Text = "Time is 120 s";
             // 
             // timerHard
             // 
@@ -552,13 +539,27 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblScore.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(682, 214);
+            this.lblScore.Location = new System.Drawing.Point(682, 87);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(61, 28);
             this.lblScore.TabIndex = 39;
             this.lblScore.Text = "Score";
+            // 
+            // btnSc
+            // 
+            this.btnSc.BackgroundImage = global::MemoryGame.Properties.Resources.butt;
+            this.btnSc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSc.Enabled = false;
+            this.btnSc.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSc.Location = new System.Drawing.Point(682, 141);
+            this.btnSc.Name = "btnSc";
+            this.btnSc.Size = new System.Drawing.Size(125, 46);
+            this.btnSc.TabIndex = 40;
+            this.btnSc.Text = "Save score";
+            this.btnSc.UseVisualStyleBackColor = true;
+            this.btnSc.Click += new System.EventHandler(this.btnSc_Click);
             // 
             // Hard
             // 
@@ -567,9 +568,9 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.obl;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 588);
+            this.Controls.Add(this.btnSc);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.labelTime);
-            this.Controls.Add(this.left);
             this.Controls.Add(this.Restart);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox26);
@@ -607,6 +608,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Hard";
             this.Text = "Hard";
             this.Load += new System.EventHandler(this.Hard_Load);
@@ -690,9 +692,9 @@
         private System.Windows.Forms.PictureBox pictureBox35;
         private System.Windows.Forms.PictureBox pictureBox36;
         private System.Windows.Forms.Button Restart;
-        private System.Windows.Forms.Label left;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timerHard;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnSc;
     }
 }
