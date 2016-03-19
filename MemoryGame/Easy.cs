@@ -17,6 +17,7 @@ namespace MemoryGame
         private string pic_route;
         public Easy(string new_route)
         {
+            
             pic_route = new_route; 
             InitializeComponent();
         }
@@ -75,6 +76,7 @@ namespace MemoryGame
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = "EASY";
             StartImage();
             First();
             HandOut();

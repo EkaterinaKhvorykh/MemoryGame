@@ -23,6 +23,7 @@ namespace MemoryGame
 
         private void Hard_Load(object sender, EventArgs e)
         {
+            this.Text = "HARD";
             StartImage();
             First();
             HandOut();

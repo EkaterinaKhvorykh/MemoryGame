@@ -1,7 +1,7 @@
 ﻿<Window x:Class="StartPage.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="466" Width="607">
+        Title="MemoryGame" Height="466" Width="607">
 
     <Grid>
         <Image HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="589" Source="logo2.png" Margin="10,0,0,0"/>
