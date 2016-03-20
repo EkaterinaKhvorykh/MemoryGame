@@ -127,7 +127,12 @@ namespace MemoryGame
 
         private void PB_Click(object sender, EventArgs e)
         {
-            
+
+            Routes(sender);
+        }
+
+        private void Routes(object sender)
+        {
             PictureBox wopper2 = (sender as PictureBox);
             try
             {
@@ -136,7 +141,7 @@ namespace MemoryGame
             }
             catch (FileNotFoundException)
             {
-                
+
                 MessageBox.Show("Failed");
 
             };
@@ -150,7 +155,7 @@ namespace MemoryGame
                 if (pictures2 == wopper2)
                 {
 
-                   schetchik = 0;
+                    schetchik = 0;
                     pictures2.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 }
                 else

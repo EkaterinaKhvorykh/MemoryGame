@@ -50,6 +50,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelScore = new System.Windows.Forms.Label();
             this.btn_score = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -284,7 +285,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Image = global::MemoryGame.Properties.Resources.butt;
-            this.label1.Location = new System.Drawing.Point(450, 49);
+            this.label1.Location = new System.Drawing.Point(436, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 28);
             this.label1.TabIndex = 3;
@@ -302,7 +303,7 @@
             this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelScore.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelScore.Image = global::MemoryGame.Properties.Resources.butt;
-            this.labelScore.Location = new System.Drawing.Point(450, 90);
+            this.labelScore.Location = new System.Drawing.Point(436, 90);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(61, 28);
             this.labelScore.TabIndex = 4;
@@ -322,6 +323,19 @@
             this.btn_score.UseVisualStyleBackColor = true;
             this.btn_score.Click += new System.EventHandler(this.btn_score_Click);
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::MemoryGame.Properties.Resources.butt;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(436, 288);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 38);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "TOP-10";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Easy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +343,7 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.obl;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(648, 427);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_score);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.label1);
@@ -402,6 +417,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelScore;
         private System.Windows.Forms.Button btn_score;
+        private System.Windows.Forms.Button button2;
     }
 }
 

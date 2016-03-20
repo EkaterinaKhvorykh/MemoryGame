@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MemoryGame;
-
+using System.Windows.Markup;
+using System.Windows.Baml2006; 
 namespace StartPage
 {
     /// <summary>
@@ -27,6 +28,10 @@ namespace StartPage
         public MainWindow()
         {
             InitializeComponent();
+            //ImageBrush myBrush = new ImageBrush();
+            //myBrush.ImageSource = new BitmapImage(new Uri("pack://MemoryGame:.../fon2.jpg", UriKind.Absolute));
+            //this.Background = myBrush;
+           
         }
        
         public void Button_Click(object sender, RoutedEventArgs e)
@@ -47,16 +52,22 @@ namespace StartPage
         private void SM_Selected(object sender, RoutedEventArgs e)
         {
             this.new_route = "SuperMario";
+            Easy.IsEnabled = true;
+            Hard.IsEnabled = true;
         }
 
         private void AB_Selected(object sender, RoutedEventArgs e)
         {
-            this.new_route = "AngryBirds"; 
+            this.new_route = "AngryBirds";
+            Easy.IsEnabled = true;
+            Hard.IsEnabled = true;
         }
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            this.new_route = "Smeshar"; 
+            this.new_route = "Smeshar";
+            Easy.IsEnabled = true;
+            Hard.IsEnabled = true;
         }
 
      

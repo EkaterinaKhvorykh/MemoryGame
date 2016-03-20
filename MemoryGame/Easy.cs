@@ -14,6 +14,7 @@ namespace MemoryGame
 {
     public partial class Easy : Form
     {
+        
         private string pic_route;
             
         public Easy(string new_route)
@@ -27,6 +28,7 @@ namespace MemoryGame
          PictureBox pictures;
          int pairs = 8;
          int time = 0;
+         int timeScore { get; set; }
         void StartImage()
         {
             foreach (Control x in Controls)
@@ -38,7 +40,7 @@ namespace MemoryGame
                 }
             }
         }
-        void KeyAlgoritm (PictureBox previous, PictureBox next)
+        void KeyAlgoritm(PictureBox previous, PictureBox next)
         {
             if (previous.Tag.ToString() == next.Tag.ToString())
             {
@@ -47,33 +49,33 @@ namespace MemoryGame
                 previous.Visible = true;
                 next.Visible = true;
                 //button1.Click -= new System.EventHandler(this.pictureBox1_Click);
-                
-               
+
+
                 pairs--;
                 if (pairs == 0)
                 {
-                   
+
                     timer1.Stop();
                     btn_score.Enabled = true;
-    
+
                 }
-               
+
             }
             else
             {
-               Application.DoEvents();
-               System.Threading.Thread.Sleep(400);
-               try
-               {
-                   previous.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
-                   next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
-               }
-               catch (FileNotFoundException)
-               {
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(400);
+                try
+                {
+                    previous.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
+                    next.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
+                }
+                catch (FileNotFoundException)
+                {
 
-                   MessageBox.Show("Failed");
-               };
-                
+                    MessageBox.Show("Failed");
+                };
+
             }
 
         }
@@ -81,21 +83,12 @@ namespace MemoryGame
         {
             this.Text = "EASY";
             StartImage();
-            First();
+            
             HandOut();
            
 
         }
-        void First()
-        {
-            foreach (Control x in Controls)
-            {
-                if (x is PictureBox)
-                {
-                    (x as PictureBox).Tag = "0";
-                }
-            }
-        }
+        
         void HandOut ()
         {
             int[] numbers = new int[16];
@@ -132,12 +125,18 @@ namespace MemoryGame
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            Routes(sender);  
+        }
+
+
+        private void Routes(object sender)
+        {
             PictureBox wopper = (sender as PictureBox);
-            
+
             try
             {
                 string str = @"..\\..\\..\\MemoryGame\Resources\" + pic_route + "//" + (sender as PictureBox).Tag.ToString() + ".png";
-         
+
                 wopper.Image = Image.FromFile(str);
             }
 
@@ -158,16 +157,16 @@ namespace MemoryGame
             {
                 if (pictures == wopper)
                 {
-                  
+
                     counter = 0;
                     pictures.Image = Image.FromFile(@"..\\..\\..\\MemoryGame\Resources\que2.png");
                 }
                 else
                 {
-                    KeyAlgoritm (pictures, wopper);
+                    KeyAlgoritm(pictures, wopper);
                     counter = 0;
                 }
-            }         
+            }
         }
         public void Retry()
         {
@@ -187,7 +186,6 @@ namespace MemoryGame
             
             Retry();
             StartImage();
-            First();
             HandOut();
             pairs = 8;
             counter = 0;
@@ -212,7 +210,7 @@ namespace MemoryGame
         private int calculateScore()
         {
             //int score = 0;    
-            int timeScore = 10000 / time;
+            timeScore = 10000 / time;
             labelScore.Text = "Your score is " + timeScore;
             return timeScore;
         }
@@ -220,7 +218,17 @@ namespace MemoryGame
         private void btn_score_Click(object sender, EventArgs e)
         {
             var pn = new PlayerName();
-            pn.Show(); 
+            pn.MyScore = timeScore.ToString();
+            pn.MyTime = time.ToString();
+            pn.Show();
+            btn_score.Enabled = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var ev = new EasyViewer();
+            ev.Show();
         }
     }
 }

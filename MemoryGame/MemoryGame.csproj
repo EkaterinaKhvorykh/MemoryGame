@@ -11,6 +11,7 @@
     <AssemblyName>MemoryGame</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -64,11 +64,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppLogic.cs" />
     <Compile Include="Easy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Easy.Designer.cs">
       <DependentUpon>Easy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EasyViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EasyViewer.Designer.cs">
+      <DependentUpon>EasyViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Hard.cs">
       <SubType>Form</SubType>
@@ -86,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Easy.resx">
       <DependentUpon>Easy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EasyViewer.resx">
+      <DependentUpon>EasyViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hard.resx">
       <DependentUpon>Hard.cs</DependentUpon>
@@ -120,6 +130,13 @@
     <None Include="Resources\que2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EasyDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EasyDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>EasyDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Resources\AngryBirds\1.png" />
     <Content Include="Resources\AngryBirds\10.png" />
     <Content Include="Resources\AngryBirds\11.png" />
@@ -184,12 +201,12 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 и x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
-      <ProductName>Клиентский профиль .NET Framework 3.5 с пакетом обновления 1 %28SP1%29</ProductName>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
