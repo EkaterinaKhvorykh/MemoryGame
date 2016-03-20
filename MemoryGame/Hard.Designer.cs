@@ -70,6 +70,7 @@
             this.timerHard = new System.Windows.Forms.Timer(this.components);
             this.lblScore = new System.Windows.Forms.Label();
             this.btnSc = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
@@ -561,6 +562,19 @@
             this.btnSc.UseVisualStyleBackColor = true;
             this.btnSc.Click += new System.EventHandler(this.btnSc_Click);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::MemoryGame.Properties.Resources.butt;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(682, 370);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 46);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Top-chart";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Hard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +582,7 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.obl;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(904, 588);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSc);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.labelTime);
@@ -696,5 +711,6 @@
         private System.Windows.Forms.Timer timerHard;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Button btnSc;
+        private System.Windows.Forms.Button button1;
     }
 }

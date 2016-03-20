@@ -83,6 +83,12 @@
     <Compile Include="Hard.Designer.cs">
       <DependentUpon>Hard.cs</DependentUpon>
     </Compile>
+    <Compile Include="HardViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HardViewer.Designer.cs">
+      <DependentUpon>HardViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hard.resx">
       <DependentUpon>Hard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HardViewer.resx">
+      <DependentUpon>HardViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerName.resx">
       <DependentUpon>PlayerName.cs</DependentUpon>

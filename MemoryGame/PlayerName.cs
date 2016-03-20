@@ -32,19 +32,27 @@ namespace MemoryGame
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\дз\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connstring))
+            try
             {
-                connection.Open();
-                SqlCommand addPerson = new SqlCommand("INSERT INTO EasyPeople (Nickname, Score, Time)" + "VALUES (@Nickname, @Score, @Time)", connection);
-                addPerson.Parameters.AddWithValue("@Nickname", txtName.Text);
-                addPerson.Parameters.AddWithValue("@Score", MyScore);
-                addPerson.Parameters.AddWithValue("@Time", MyTime);
 
-                addPerson.ExecuteNonQuery();
+                string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\дз\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection(connstring))
+                {
+                    connection.Open();
+                    SqlCommand addPerson = new SqlCommand("INSERT INTO EasyPeople (Nickname, Score, Time)" + "VALUES (@Nickname, @Score, @Time)", connection);
+                    addPerson.Parameters.AddWithValue("@Nickname", txtName.Text);
+                    addPerson.Parameters.AddWithValue("@Score", MyScore);
+                    addPerson.Parameters.AddWithValue("@Time", MyTime);
+
+                    addPerson.ExecuteNonQuery();
+                    this.Close();
+                }
                 this.Close();
             }
-            this.Close();
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("No nickname was written");
+            };
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

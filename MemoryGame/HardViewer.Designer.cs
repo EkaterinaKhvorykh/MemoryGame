@@ -1,6 +1,6 @@
 ﻿namespace MemoryGame
 {
-    partial class EasyViewer
+    partial class HardViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -36,30 +36,31 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(79, 61);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(456, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(383, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(184, 12);
+            this.button1.Location = new System.Drawing.Point(223, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.Size = new System.Drawing.Size(115, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Show top-chart";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // EasyViewer
+            // HardViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 261);
+            this.ClientSize = new System.Drawing.Size(551, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "EasyViewer";
-            this.Text = "EasyViewer";
+            this.Name = "HardViewer";
+            this.Text = "HardViewer";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

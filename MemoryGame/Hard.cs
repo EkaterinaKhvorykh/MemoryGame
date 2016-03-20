@@ -14,6 +14,7 @@ namespace MemoryGame
     public partial class Hard : Form
     {
         private string pic_route;
+        int timeScore { get; set; }
        
         public Hard(string new_route)
         {
@@ -207,7 +208,7 @@ namespace MemoryGame
         private int calculateScore()
         {
             //int score = 0;    
-            int timeScore = 15 * time2;
+            timeScore = 15 * time2;
             lblScore.Text = "Your score is " + timeScore;
             return timeScore;
         }
@@ -215,7 +216,16 @@ namespace MemoryGame
         private void btnSc_Click(object sender, EventArgs e)
         {
             var pn = new PlayerName();
-            pn.Show(); 
+            pn.MyScore = timeScore.ToString();
+            pn.MyTime = time2.ToString();
+            pn.Show();
+            btnSc.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var hv = new HardViewer();
+            hv.Show();
         }
     }
 
