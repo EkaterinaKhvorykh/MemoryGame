@@ -32,26 +32,36 @@ namespace MemoryGame
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            
             try
             {
-
-                string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\дз\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connstring))
+                if (txtName.Text == "")
                 {
-                    connection.Open();
-                    SqlCommand addPerson = new SqlCommand("INSERT INTO EasyPeople (Nickname, Score, Time)" + "VALUES (@Nickname, @Score, @Time)", connection);
-                    addPerson.Parameters.AddWithValue("@Nickname", txtName.Text);
-                    addPerson.Parameters.AddWithValue("@Score", MyScore);
-                    addPerson.Parameters.AddWithValue("@Time", MyTime);
+                    throw new ArgumentNullException();
+                }
 
-                    addPerson.ExecuteNonQuery();
+                else
+                {
+                    string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
+                    using (SqlConnection connection = new SqlConnection(connstring))
+                    {
+                        connection.Open();
+                        SqlCommand addPerson = new SqlCommand("INSERT INTO EasyPeople (Nickname, Score, Time)" + "VALUES (@Nickname, @Score, @Time)", connection);
+                        addPerson.Parameters.AddWithValue("@Nickname", txtName.Text);
+                        addPerson.Parameters.AddWithValue("@Score", MyScore);
+                        addPerson.Parameters.AddWithValue("@Time", MyTime);
+
+                        addPerson.ExecuteNonQuery();
+                        this.Close();
+                    }
                     this.Close();
                 }
-                this.Close();
+
+             
             }
             catch (Exception)
             {
-                System.Windows.Forms.MessageBox.Show("No nickname was written");
+                System.Windows.Forms.MessageBox.Show("No nickname was written or datbase not founded");
             };
         }
 
@@ -59,10 +69,7 @@ namespace MemoryGame
         {
             this.Close();
         }
-        void SomeMetod(int time, int time2, int timeScore)
-        {
-               
-        }
+        
 
         
     }
