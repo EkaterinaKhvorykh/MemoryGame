@@ -1,0 +1,1 @@
+For proper working of local database you should put the main foler MemoryGame to thet way C:\
