@@ -27,7 +27,7 @@ namespace MemoryGame
         {
             var dt = new DataTable();
 
-            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\MemoryGame-master\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
 
             using (var cn = new SqlConnection(connectionString))
             using (var cmd = new SqlCommand("Select Nickname, Score, Time_left From HardPeople Order by Score DESC", cn))

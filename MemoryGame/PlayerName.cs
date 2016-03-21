@@ -42,7 +42,7 @@ namespace MemoryGame
 
                 else
                 {
-                    string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\MemoryGame\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
+                    string connstring = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\MemoryGame-master\MemoryGame\EasyDatabase.mdf;Integrated Security=True";
                     using (SqlConnection connection = new SqlConnection(connstring))
                     {
                         connection.Open();
